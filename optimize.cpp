@@ -216,7 +216,7 @@ int main() {
 	cout << "Using random seed " << seed << "\n";
 	rng.seed(seed);
 
-    double initTemp = exp(uniform_real_distribution<double>(log(5000.0), log(50000.0))(rng));
+    double initTemp = exp(uniform_real_distribution<double>(log(10000.0), log(50000.0))(rng));
     cout << "Initial temperature " << initTemp << "\n";
 
     Z initWtLimit = 0;
@@ -246,7 +246,8 @@ int main() {
     for(long long iter = 0; iter < iterations; ++iter) {
         double prog = (double)iter / (double)iterations;
         auto temp = [&]() {
-            return (1.0 - (double)iter / (double)iterations) * initTemp;
+            double t = (1.0 - (double)iter / (double)iterations);
+            return t * t * initTemp;
         };
         Z wtLimit = min(initWtLimit + iter * (endWtLimit - initWtLimit) / iterations, FinalWtLimit);
 
