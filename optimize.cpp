@@ -229,7 +229,7 @@ int main() {
     endWtLimit = min(endWtLimit, uniform_int_distribution<Z>(FinalWtLimit, 2 * FinalWtLimit)(rng));
     cout << "End weight limit " << endWtLimit << " (capped to " << FinalWtLimit << ")\n";
 
-    long long iterations = (long long)1e11;
+    long long iterations = (long long)3e11;
     cout << "Running " << (double)iterations << " iterations\n";
 
     cout << "Constructing initial paths\n";
