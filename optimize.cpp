@@ -216,7 +216,7 @@ int main() {
 	cout << "Using random seed " << seed << "\n";
 	rng.seed(seed);
 
-    double initTemp = exp(uniform_real_distribution<double>(log(10000.0), log(50000.0))(rng));
+    double initTemp = exp(uniform_real_distribution<double>(log(5000.0), log(50000.0))(rng));
     cout << "Initial temperature " << initTemp << "\n";
 
     Z initWtLimit = 0;
